@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Cakittos Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5EBDD;
+    color: #3B2118;
+}
+
+/* ===== HEADER ===== */
+header {
+    min-height: 220px;
+    background:
+        linear-gradient(rgba(40, 21, 15, 0.68),
+                        rgba(40, 21, 15, 0.68)),
+        url('background/Bannerhomep.png');
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #C69B70;
+}
+
+/* ===== HEADER TITLE ===== */
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #FFF8EF;
+    letter-spacing: 1px;
+}
+
+.header-content p {
+    font-size: 12px;
+    color: #E6D0B8;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: #3B2118;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 16px 20px;
+}
+
+nav a {
+    color: #FFF8EF;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #C69B70;
+}
+
+/* ===== CONTACT INTRO ===== */
+.contact-intro {
+    text-align: center;
+    padding: 65px 20px 35px;
+}
+
+.contact-intro .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #946344;
+    margin-bottom: 12px;
+}
+
+.contact-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contact-intro p {
+    color: #68432F;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 30px 85px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* ===== CONTACT CARDS ===== */
+.contact-card {
+    background-color: #FFF8EF;
+    border: 1px solid #E6D0B8;
+    padding: 35px 20px;
+    text-align: center;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(59, 33, 24, 0.12);
+}
+
+/* ===== ICON CIRCLE ===== */
+.contact-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #E6D0B8;
+    color: #3B2118;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.contact-icon svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+/* ===== CONTACT CARD TEXT ===== */
+.contact-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    font-size: 12px;
+    color: #946344;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+/* ===== CONTACT LINKS ===== */
+.contact-link {
+    display: inline-block;
+    color: #68432F;
+    font-size: 12px;
+    text-decoration: none;
+    border-bottom: 1px solid #C69B70;
+    padding-bottom: 4px;
+    overflow-wrap: anywhere;
+    transition: 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #28150F;
+    border-color: #28150F;
+}
+
+/* ===== CLOSING MESSAGE ===== */
+.contact-note {
+    text-align: center;
+    padding: 0 20px 65px;
+    color: #946344;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #28150F;
+    color: #E6D0B8;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 11px;
+    line-height: 2;
+}
+
+footer span {
+    color: #C69B70;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 850px) {
+    nav {
+        gap: 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+    .contact-container {
+        max-width: 550px;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 520px) {
+    header {
+        min-height: 165px;
+        padding: 30px 15px;
+    }
+
+    .logo {
+        top: 15px;
+        left: 15px;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .header-content h1 {
+        font-size: 27px;
+    }
+
+    .header-content p {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    nav {
+        gap: 12px 18px;
+        padding: 15px 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .contact-intro {
+        padding: 45px 18px 25px;
+    }
+
+    .contact-intro h2 {
+        font-size: 34px;
+    }
+
+    .contact-intro p {
+        font-size: 12px;
+    }
+
+    .contact-container {
+        padding: 15px 20px 50px;
+    }
+
+    .contact-card {
+        padding: 28px 18px;
+    }
+
+    .contact-card h3 {
+        font-size: 21px;
+    }
+
+    .contact-note {
+        font-size: 17px;
+        padding-bottom: 45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <a href="index.html" class="logo">
+        <img src="gallery/logo.jpg" alt="Cakittos Logo">
+    </a>
+
+    <div class="header-content">
+        <h1>Cakittos Portfolio</h1>
+        <p>A Little Space of Creativity</p>
+    </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="identity.html">Artist Identity</a>
+    <a href="resume.html">Resume</a>
+    <a href="gallery.html">Artwork Gallery</a>
+    <a href="contact.html" class="active">Contact</a>
+</nav>
+
+<!-- ===== CONTACT INTRO ===== -->
+<section class="contact-intro">
+    <p class="eyebrow">Let's Connect</p>
+
+    <h2>Get In Touch.</h2>
+
+    <p>
+        Thank you for visiting my portfolio.
+        Feel free to reach out to me through my social media,
+        phone number or email. I would love to hear from you!
+    </p>
+</section>
+
+<!-- ===== CONTACT DETAILS ===== -->
+<main class="contact-container">
+    <div class="contact-grid">
+
+        <!-- INSTAGRAM -->
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                <!-- Instagram Logo -->
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-label="Instagram logo"
+                     role="img">
+
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+
+                    <circle cx="12" cy="12" r="4"/>
+
+                    <circle cx="17.5" cy="6.5" r="1"
+                            fill="currentColor"
+                            stroke="none"/>
+                </svg>
+            </div>
+
+            <h3>Instagram</h3>
+
+            <p>
+                Follow my journey and discover more
+                of my creative work.
+            </p>
+
+            <!-- Change to your actual Instagram username -->
+            <a
+                href="https://instagram.com/x.wolfy_bloodpaw.x?vrfl=MTZ2ajg2dWJmcjJ2bw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link">
+                @x.wolfy_bloodpaw.x
+            </a>
+        </div>
+
+        <!-- PHONE NUMBER -->
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                <!-- Phone Icon -->
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-label="Phone icon"
+                     role="img">
+
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                    19.79 19.79 0 0 1-8.63-3.07
+                    19.5 19.5 0 0 1-6-6
+                    A19.79 19.79 0 0 1 2.12 4.18
+                    2 2 0 0 1 4.11 2h3
+                    a2 2 0 0 1 2 1.72
+                    c.12.96.36 1.9.7 2.8
+                    a2 2 0 0 1-.45 2.11L8.09 9.91
+                    a16 16 0 0 0 6 6l1.27-1.27
+                    a2 2 0 0 1 2.11-.45
+                    c.9.34 1.84.58 2.8.7
+                    A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </div>
+
+            <h3>Phone Number</h3>
+
+            <p>
+                Feel free to contact me
+                for enquiries or collaborations.
+            </p>
+
+            <!-- Change to your actual phone number -->
+            <a href="tel:+601137003514" class="contact-link">
+                +60 1137003514
+            </a>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                <!-- Email Icon -->
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-label="Email icon"
+                     role="img">
+
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+
+                    <path d="m3 7 9 6 9-6"/>
+                </svg>
+            </div>
+
+            <h3>Email Address</h3>
+
+            <p>
+                Send me an email for any questions,
+                opportunities or enquiries.
+            </p>
+
+            <!-- Change to your actual email address -->
+            <a
+                href="mailto:ilikhalidakamaluddin@gmail.com"
+                class="contact-link">
+                ilikhalidakamaluddin@gmail.com
+            </a>
+        </div>
+
+    </div>
+</main>
+
+<!-- ===== CLOSING MESSAGE ===== -->
+<div class="contact-note">
+    "Every connection starts with a hello." ♡
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2026 Cakittos Portfolio. All rights reserved.</p>
+    <p>Made with <span>♡</span> and a little creativity.</p>
+</footer>
+
+</body>
+</html>
+```

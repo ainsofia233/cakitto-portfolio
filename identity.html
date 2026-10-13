@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cakittos Portfolio | Artist Identity</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* =========================
+           CHOCOLATE COLOUR PALETTE
+        ========================= */
+
+        :root {
+            --chocolate: #3B2118;
+            --dark-chocolate: #28150F;
+            --brown: #68432F;
+            --mocha: #946344;
+            --caramel: #C69B70;
+            --cream: #FFF8EF;
+            --background: #F5EBDD;
+            --soft-cream: #E6D0B8;
+        }
+
+        /* =========================
+           GENERAL SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background);
+            color: var(--chocolate);
+            line-height: 1.7;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            min-height: 230px;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(40, 21, 15, 0.45),
+                    rgba(40, 21, 15, 0.45)
+                ),
+                url("background/Bannerhomep.png");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 35px 100px;
+        }
+
+        /* SMALL LOGO AT TOP LEFT */
+
+        .top-logo {
+            position: absolute;
+            left: 35px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 95px;
+            height: 95px;
+            padding: 7px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--cream);
+            border: 2px solid var(--caramel);
+            border-radius: 50%;
+
+            box-shadow: 0 5px 15px rgba(40, 21, 15, 0.25);
+
+            transition: transform 0.3s ease;
+        }
+
+        .top-logo:hover {
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .top-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--cream);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-subtitle {
+            color: var(--cream);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            background: var(--dark-chocolate);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            padding: 15px 12px;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+
+            padding: 9px 17px;
+            font-size: 0.88rem;
+            font-weight: 400;
+
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--caramel);
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        /* =========================
+           PAGE INTRODUCTION
+        ========================= */
+
+        .page-intro {
+            text-align: center;
+            padding: 65px 20px 35px;
+        }
+
+        .page-label {
+            color: var(--mocha);
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .page-intro h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 600;
+        }
+
+        .page-intro h1 span {
+            color: var(--mocha);
+        }
+
+        .page-description {
+            max-width: 580px;
+            margin: 15px auto 0;
+            color: var(--brown);
+            font-size: 0.92rem;
+            font-weight: 300;
+        }
+
+        .title-decoration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            color: var(--mocha);
+        }
+
+        .title-decoration::before,
+        .title-decoration::after {
+            content: "";
+            width: 45px;
+            height: 1px;
+            background: var(--caramel);
+        }
+
+        /* =========================
+           ARTIST PROFILE
+        ========================= */
+
+        .identity-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 6% 100px;
+
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            align-items: center;
+            gap: 65px;
+        }
+
+        /* ARTIST IMAGE */
+
+        .artist-visual {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .artist-photo-frame {
+            background: var(--cream);
+            padding: 13px;
+
+            border: 2px solid var(--caramel);
+            border-radius: 12px;
+
+            box-shadow: 12px 12px 0 var(--soft-cream);
+        }
+
+        .artist-photo-frame img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 6px;
+        }
+
+        .photo-caption {
+            text-align: center;
+            margin-top: 25px;
+
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--mocha);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* DECORATIVE CIRCLE */
+
+        .photo-decoration {
+            position: absolute;
+            top: -22px;
+            right: -18px;
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: var(--chocolate);
+            color: var(--cream);
+
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+
+            border: 3px solid var(--background);
+        }
+
+        /* =========================
+           ARTIST INFORMATION
+        ========================= */
+
+        .identity-content {
+            min-width: 0;
+        }
+
+        .identity-tag {
+            display: inline-block;
+            color: var(--mocha);
+            font-size: 0.76rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .identity-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .identity-content h2 span {
+            color: var(--mocha);
+            display: block;
+        }
+
+        .identity-divider {
+            width: 75px;
+            height: 3px;
+            background: var(--caramel);
+            border-radius: 10px;
+            margin: 22px 0;
+        }
+
+        .identity-content p {
+            color: var(--brown);
+            font-size: 0.92rem;
+            font-weight: 300;
+            margin-bottom: 18px;
+        }
+
+        /* ARTIST SIGNATURE */
+
+        .artist-signature {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--soft-cream);
+        }
+
+        .artist-signature p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--mocha);
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--dark-chocolate);
+            color: var(--cream);
+
+            text-align: center;
+            padding: 25px 15px;
+
+            font-size: 0.8rem;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+            color: var(--caramel);
+        }
+
+        /* =========================
+           TABLET RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                padding: 30px 100px;
+            }
+
+            .top-logo {
+                left: 20px;
+                width: 75px;
+                height: 75px;
+            }
+
+            .identity-section {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                max-width: 650px;
+                padding-top: 25px;
+                padding-bottom: 75px;
+            }
+
+            .artist-visual {
+                max-width: 350px;
+            }
+
+            .identity-content {
+                text-align: center;
+            }
+
+            .identity-divider {
+                margin: 22px auto;
+            }
+
+            .artist-signature {
+                text-align: center;
+            }
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            header {
+                min-height: 160px;
+                padding: 25px 12px 25px 78px;
+            }
+
+            .top-logo {
+                left: 12px;
+                width: 54px;
+                height: 54px;
+                padding: 4px;
+            }
+
+            .header-title {
+                font-size: clamp(1.45rem, 6vw, 2rem);
+                letter-spacing: 0.5px;
+            }
+
+            .header-subtitle {
+                font-size: 0.55rem;
+                letter-spacing: 1.5px;
+            }
+
+            nav {
+                gap: 2px;
+                padding: 12px 5px;
+            }
+
+            nav a {
+                padding: 8px 9px;
+                font-size: 0.77rem;
+            }
+
+            .page-intro {
+                padding: 45px 20px 25px;
+            }
+
+            .page-label {
+                font-size: 0.65rem;
+                letter-spacing: 2.5px;
+            }
+
+            .page-intro h1 {
+                font-size: 2.4rem;
+            }
+
+            .page-description {
+                font-size: 0.85rem;
+            }
+
+            .identity-section {
+                padding: 25px 7% 65px;
+                gap: 40px;
+            }
+
+            .artist-visual {
+                max-width: 300px;
+            }
+
+            .artist-photo-frame {
+                padding: 9px;
+                box-shadow: 7px 7px 0 var(--soft-cream);
+            }
+
+            .photo-decoration {
+                width: 52px;
+                height: 52px;
+                font-size: 1.4rem;
+                right: -10px;
+                top: -15px;
+            }
+
+            .identity-tag {
+                font-size: 0.68rem;
+                letter-spacing: 2px;
+            }
+
+            .identity-content h2 {
+                font-size: 2.3rem;
+            }
+
+            .identity-content p {
+                font-size: 0.85rem;
+            }
+
+            .artist-signature p {
+                font-size: 1rem;
+            }
+        }
+
+        /* EXTRA SMALL PHONES */
+
+        @media (max-width: 340px) {
+
+            header {
+                padding-left: 65px;
+            }
+
+            .top-logo {
+                left: 8px;
+                width: 46px;
+                height: 46px;
+            }
+
+            .header-title {
+                font-size: 1.35rem;
+            }
+
+            .header-subtitle {
+                font-size: 0.48rem;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <a href="index.html"
+           class="top-logo"
+           aria-label="Cakittos Home">
+
+            <img src="gallery/logo.jpg" alt="Cakittos Logo">
+
+        </a>
+
+        <div class="header-content">
+
+            <h1 class="header-title">Cakittos Portfolio</h1>
+
+            <p class="header-subtitle">
+                A LITTLE WORLD OF CREATIVITY
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="identity.html" class="active">
+            Artist Identity
+        </a>
+
+        <a href="resume.html">Resume</a>
+
+        <a href="gallery.html">Artwork Gallery</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="page-intro">
+
+            <p class="page-label">
+                Behind the Creativity
+            </p>
+
+            <h1>
+                Artist <span>Identity.</span>
+            </h1>
+
+            <div class="title-decoration">♡</div>
+
+            <p class="page-description">
+                Get to know the person behind the artwork,
+                the inspiration behind each creation, and
+                the story behind Cakitto Studio.
+            </p>
+
+        </section>
+
+        <!-- ARTIST PROFILE -->
+        <section class="identity-section">
+
+            <!-- ARTIST IMAGE -->
+            <div class="artist-visual">
+
+                <div class="artist-photo-frame">
+
+                    <img
+                        src="gallery/artist.jpg"
+                        alt="Portrait of the artist"
+                    >
+
+                </div>
+
+                <div class="photo-decoration">♡</div>
+
+                <p class="photo-caption">
+                    The artist behind the art.
+                </p>
+
+            </div>
+
+            <!-- ARTIST INFORMATION -->
+            <div class="identity-content">
+
+                <span class="identity-tag">
+                    Hello, nice to meet you!
+                </span>
+
+                <h2>
+                    I'M <span>ILI KHALIDA BINTI KAMALUDDIN.</span>
+                </h2>
+
+                <div class="identity-divider"></div>
+
+                <p>
+                   I am a 22 year old diploma in Animation student at Kolej Poly-Tech MARA (KPTM) IPOH. I am a passionate Animation Student with a strong interest in 2D animation and visual storytelling. I have developed skills in 2D Animation, Storyboarding, Character Design, and Concept Development through my academic projects and creative work
+                </p>
+
+                <p>
+                    I enjoy creating engaging characters, developing visual ideas, and turning concepts into meaningful animations. I am a creative, hardworking, and willing-to-learn individual who is eager to gain industry experience, improve my skills, and contribute my creativity to a professional animation team during my internship.
+                </p>
+
+                </p>
+
+                <div class="artist-signature">
+
+                    <p>With love and creativity, ♡</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Cakittos Portfolio. All rights reserved.
+        </p>
+
+        <p>
+            Made with ♡ and a little creativity.
+        </p>
+
+    </footer>
+
+</body>
+</html>
