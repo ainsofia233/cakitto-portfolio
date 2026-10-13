@@ -1,445 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork Gallery | Cakittos Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Artwork Gallery | Cakittos Portfolio</title>
 
-  <style>
-    /* ===== RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #F5EBDD;
-      color: #3B2118;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    /* ===== HEADER ===== */
-    header {
-      min-height: 220px;
-      background:
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5EBDD;
+    color: #3B2118;
+}
+
+/* ===== HEADER ===== */
+header {
+    min-height: 220px;
+    background:
         linear-gradient(rgba(40, 21, 15, 0.68),
                         rgba(40, 21, 15, 0.68)),
         url('background/Bannerhomep.png');
 
-      background-size: cover;
-      background-position: center;
+    background-size: cover;
+    background-position: center;
 
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 35px 20px;
-    }
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 35px 20px;
+}
 
-    /* ===== LOGO ===== */
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-    }
+/* ===== LOGO ===== */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
 
-    .logo img {
-      width: 65px;
-      height: 65px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #C69B70;
-    }
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #C69B70;
+}
 
-    /* ===== HEADER TITLE ===== */
-    .header-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      color: #FFF8EF;
-      letter-spacing: 1px;
-    }
+/* ===== HEADER TITLE ===== */
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #FFF8EF;
+    letter-spacing: 1px;
+}
 
-    .header-content p {
-      font-size: 12px;
-      color: #E6D0B8;
-      letter-spacing: 2px;
-      margin-top: 8px;
-      text-transform: uppercase;
-    }
+.header-content p {
+    font-size: 12px;
+    color: #E6D0B8;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
 
-    /* ===== NAVIGATION ===== */
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: #3B2118;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 16px 20px;
+}
+
+nav a {
+    color: #FFF8EF;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #C69B70;
+}
+
+/* ===== GALLERY INTRO ===== */
+.gallery-intro {
+    text-align: center;
+    padding: 55px 20px 35px;
+}
+
+.gallery-intro .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #946344;
+    margin-bottom: 12px;
+}
+
+.gallery-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.gallery-intro p {
+    color: #68432F;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* ===== GALLERY CONTAINER ===== */
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 35px 80px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* ===== CATEGORY TITLES ===== */
+.gallery-category {
+    grid-column: 1 / -1;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #3B2118;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #C69B70;
+}
+
+.gallery-category:first-child {
+    margin-top: 0;
+}
+
+/* ===== ARTWORK IMAGES AND VIDEOS ===== */
+.artwork {
+    overflow: hidden;
+    background-color: #FFF8EF;
+    padding: 8px;
+    border: 1px solid #E6D0B8;
+    box-shadow: 0 5px 15px rgba(59, 33, 24, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.artwork:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(59, 33, 24, 0.15);
+}
+
+.artwork img,
+.artwork video {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: contain;
+    background-color: #FFF8EF;
+}
+
+.artwork img {
+    transition: transform 0.4s ease;
+}
+
+.artwork:hover img {
+    transform: scale(1.02);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #28150F;
+    color: #E6D0B8;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 11px;
+    line-height: 2;
+}
+
+footer span {
+    color: #C69B70;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 900px) {
     nav {
-      background-color: #3B2118;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 35px;
-      padding: 16px 20px;
+        gap: 20px;
     }
 
-    nav a {
-      color: #FFF8EF;
-      text-decoration: none;
-      font-size: 12px;
-      transition: 0.3s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #C69B70;
-    }
-
-    /* ===== GALLERY INTRO ===== */
-    .gallery-intro {
-      text-align: center;
-      padding: 55px 20px 35px;
-    }
-
-    .gallery-intro .eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #946344;
-      margin-bottom: 12px;
-    }
-
-    .gallery-intro h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-
-    .gallery-intro p {
-      color: #68432F;
-      font-size: 13px;
-      line-height: 1.9;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    /* ===== GALLERY CONTAINER ===== */
     .gallery-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 15px 35px 80px;
+        padding: 15px 22px 60px;
     }
 
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 
-    /* ===== CATEGORY TITLES ===== */
     .gallery-category {
-      grid-column: 1 / -1;
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      font-weight: 500;
-      color: #3B2118;
-      margin-top: 30px;
-      margin-bottom: 0;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #C69B70;
-    }
-
-    .gallery-category:first-child {
-      margin-top: 0;
-    }
-
-    /* ===== ARTWORK IMAGES AND VIDEOS ===== */
-    .artwork {
-      overflow: hidden;
-      background-color: #FFF8EF;
-      padding: 8px;
-      border: 1px solid #E6D0B8;
-      box-shadow: 0 5px 15px rgba(59, 33, 24, 0.08);
-      transition: transform 0.3s ease,
-                  box-shadow 0.3s ease;
-    }
-
-    .artwork:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(59, 33, 24, 0.15);
+        font-size: 29px;
     }
 
     .artwork img,
     .artwork video {
-      display: block;
-      width: 100%;
-      height: 430px;
-      object-fit: contain;
-      background-color: #FFF8EF;
-    }
-
-    .artwork img {
-      transition: transform 0.4s ease;
-    }
-
-    .artwork:hover img {
-      transform: scale(1.02);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: #28150F;
-      color: #E6D0B8;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 11px;
-      line-height: 2;
-    }
-
-    footer span {
-      color: #C69B70;
-    }
-
-    /* ===== TABLET ===== */
-    @media (max-width: 900px) {
-      nav {
-        gap: 20px;
-      }
-
-      .gallery-container {
-        padding: 15px 22px 60px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-      }
-
-      .gallery-category {
-        font-size: 29px;
-      }
-
-      .artwork img,
-      .artwork video {
         height: 400px;
-      }
     }
+}
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 520px) {
-      header {
+/* ===== MOBILE ===== */
+@media (max-width: 520px) {
+    header {
         min-height: 165px;
         padding: 30px 15px;
-      }
+    }
 
-      .logo {
+    .logo {
         top: 15px;
         left: 15px;
-      }
+    }
 
-      .logo img {
+    .logo img {
         width: 42px;
         height: 42px;
-      }
+    }
 
-      .header-content h1 {
+    .header-content h1 {
         font-size: 27px;
-      }
+    }
 
-      .header-content p {
+    .header-content p {
         font-size: 9px;
         letter-spacing: 1.5px;
-      }
+    }
 
-      nav {
+    nav {
         gap: 12px 18px;
         padding: 15px 10px;
-      }
+    }
 
-      nav a {
+    nav a {
         font-size: 10px;
-      }
+    }
 
-      .gallery-intro {
+    .gallery-intro {
         padding: 40px 18px 25px;
-      }
+    }
 
-      .gallery-intro h2 {
+    .gallery-intro h2 {
         font-size: 32px;
-      }
+    }
 
-      .gallery-intro p {
+    .gallery-intro p {
         font-size: 12px;
-      }
+    }
 
-      .gallery-container {
+    .gallery-container {
         padding: 10px 12px 45px;
-      }
+    }
 
-      .gallery-grid {
+    .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-      }
+    }
 
-      .gallery-category {
+    .gallery-category {
         font-size: 24px;
         margin-top: 20px;
         padding-bottom: 10px;
-      }
+    }
 
-      .artwork {
+    .artwork {
         padding: 5px;
-      }
+    }
 
-      .artwork img,
-      .artwork video {
+    .artwork img,
+    .artwork video {
         height: 280px;
-      }
     }
+}
 
-    /* ===== SMALL PHONE ===== */
-    @media (max-width: 350px) {
-      .gallery-grid {
+/* ===== SMALL PHONE ===== */
+@media (max-width: 350px) {
+    .gallery-grid {
         grid-template-columns: 1fr;
-      }
-
-      .artwork img,
-      .artwork video {
-        height: 350px;
-      }
     }
-  </style>
+
+    .artwork img,
+    .artwork video {
+        height: 350px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
+<!-- ===== HEADER ===== -->
+<header>
     <a href="index.html" class="logo">
-      <img src="gallery/logo.jpg" alt="Cakittos Logo">
+        <img src="gallery/logo.jpg" alt="Cakittos Logo">
     </a>
 
     <div class="header-content">
-      <h1>Cakittos Portfolio</h1>
-      <p>A Little Space of Creativity</p>
+        <h1>Cakittos Portfolio</h1>
+        <p>A Little Space of Creativity</p>
     </div>
-  </header>
+</header>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav>
+<!-- ===== NAVIGATION ===== -->
+<nav>
     <a href="index.html">Home</a>
     <a href="identity.html">Artist Identity</a>
     <a href="resume.html">Resume</a>
     <a href="gallery.html" class="active">Artwork Gallery</a>
     <a href="contact.html">Contact</a>
-  </nav>
+</nav>
 
-  <!-- ===== GALLERY INTRO ===== -->
-  <section class="gallery-intro">
+<!-- ===== GALLERY INTRO ===== -->
+<section class="gallery-intro">
     <p class="eyebrow">A Collection of My Work</p>
-    <h2>Artwork Gallery.</h2>
-    <p>
-      Every artwork tells a story. Explore my collection of
-      creative ideas, inspirations and artistic expressions.
-    </p>
-  </section>
 
-  <!-- ===== ARTWORK GALLERY ===== -->
-  <main class="gallery-container">
+    <h2>Artwork Gallery.</h2>
+
+    <p>
+        Every artwork tells a story. Explore my collection of
+        creative ideas, inspirations and artistic expressions.
+    </p>
+</section>
+
+<!-- ===== ARTWORK GALLERY ===== -->
+<main class="gallery-container">
     <div class="gallery-grid">
 
-      <!-- CATEGORY 1: 2D ANIMATION -->
-      <h2 class="gallery-category">01. 2D ANIMATION</h2>
+        <!-- CATEGORY 1: 2D ANIMATION -->
+        <h2 class="gallery-category">01. 2D ANIMATION</h2>
 
-      <div class="artwork">
-        <video controls preload="metadata" playsinline>
-          <source src="video/_2D.Animation_%20%281%29.mp4" type="video/mp4">
-        </video>
-      </div>
+        <div class="artwork">
+            <video controls preload="metadata">
+                <source src="video/_2D.Animation_ (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-      <div class="artwork">
-        <video controls preload="metadata" playsinline>
-          <source src="video/_2D.RawAnimationCharacter_.mp4" type="video/mp4">
-        </video>
-      </div>
+        <div class="artwork">
+            <video controls preload="metadata">
+                <source src="video/_2D.RawAnimationCharacter_.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-      <div class="artwork">
-        <video controls preload="metadata" playsinline>
-          <source src="video/_2D.Animation_%20%282%29.mp4" type="video/mp4">
-        </video>
-      </div>
+        <div class="artwork">
+            <video controls preload="metadata">
+                <source src="video/_2D.Animation_ (2).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-      <div class="artwork">
-        <video controls preload="metadata" playsinline>
-          <source src="video/_2D.Animation_.mp4" type="video/mp4">
-        </video>
-      </div>
+        <div class="artwork">
+            <video controls preload="metadata">
+                <source src="video/_2D.Animation_.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-      <!-- CATEGORY 2: COMMISSION WORK -->
-      <h2 class="gallery-category">02. COMMISION WORK</h2>
 
-      <div class="artwork">
-        <img src="gallery/_CommissionArts_01.png" alt="Commission Artwork 1">
-      </div>
+        <!-- CATEGORY 2: COMMISSION WORK -->
+        <h2 class="gallery-category">02. COMMISION WORK</h2>
 
-      <div class="artwork">
-        <img src="gallery/_CommissionArts_02.png" alt="Commission Artwork 2">
-      </div>
+        <div class="artwork">
+            <img src="gallery/_CommissionArts_01.png" alt="Commission Artwork 1">
+        </div>
 
-      <div class="artwork">
-        <img src="gallery/_CommissionArts_03.png" alt="Commission Artwork 3">
-      </div>
+        <div class="artwork">
+            <img src="gallery/_CommissionArts_02.png" alt="Commission Artwork 2">
+        </div>
 
-      <div class="artwork">
-        <img src="gallery/_CommissionArts_04.png" alt="Commission Artwork 4">
-      </div>
+        <div class="artwork">
+            <img src="gallery/_CommissionArts_03.png" alt="Commission Artwork 3">
+        </div>
 
-      <!-- CATEGORY 3: STORYBOARD -->
-      <h2 class="gallery-category">03. STORYBOARD</h2>
+        <div class="artwork">
+            <img src="gallery/_CommissionArts_04.png" alt="Commission Artwork 4">
+        </div>
 
-      <div class="artwork">
-        <img src="gallery/StoryBoard_LegendOfTasikChini1%20%281%29.jpg" alt="StoryBoard The Legend of Tasik Chini 1">
-      </div>
 
-      <div class="artwork">
-        <img src="gallery/StoryBoard_TheLegendOfTasikChini3%20%281%29.jpg" alt="StoryBoard The Legend of Tasik Chini 3">
-      </div>
+        <!-- CATEGORY 3: STORYBOARD -->
+        <h2 class="gallery-category">03. STORYBOARD</h2>
 
-      <div class="artwork">
-        <img src="gallery/storyboard4.png" alt="Storyboard 4">
-      </div>
+        <div class="artwork">
+            <img src="gallery/StoryBoard_LegendOfTasikChini1 (1).jpg" alt="StoryBoard The Legend of Tasik Chini 1">
+        </div>
 
-      <div class="artwork">
-        <img src="gallery/storyboard5.png" alt="Storyboard 5">
-      </div>
+        <div class="artwork">
+            <img src="gallery/StoryBoard_TheLegendOfTasikChini3 (1).jpg" alt="StoryBoard The Legend of Tasik Chini 3">
+        </div>
 
-      <!-- CATEGORY 4: ILLUSTRATION -->
-      <h2 class="gallery-category">04. ILLUSTRATION</h2>
+        <div class="artwork">
+            <img src="gallery/storyboard4.png" alt="Storyboard 4">
+        </div>
 
-      <div class="artwork">
-        <img src="gallery/ill1.jpg" alt="Illustration 1">
-      </div>
+        <div class="artwork">
+            <img src="gallery/storyboard5.png" alt="Storyboard 5">
+        </div>
 
-      <div class="artwork">
-        <img src="gallery/ill2.jpg" alt="Illustration 2">
-      </div>
 
-      <div class="artwork">
-        <img src="gallery/ill3.jpg" alt="Illustration 3">
-      </div>
+        <!-- CATEGORY 4: ILLUSTRATION -->
+        <h2 class="gallery-category">04. ILLUSTRATION</h2>
+
+        <div class="artwork">
+            <img src="gallery/ill1.jpg" alt="Illustration 1">
+        </div>
+
+        <div class="artwork">
+            <img src="gallery/ill2.jpg" alt="Illustration 2">
+        </div>
+
+        <div class="artwork">
+            <img src="gallery/ill3.jpg" alt="Illustration 3">
+        </div>
 
     </div>
-  </main>
+</main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
+<!-- ===== FOOTER ===== -->
+<footer>
     <p>© 2026 Cakittos Portfolio. All rights reserved.</p>
     <p>Made with <span>♡</span> and a little creativity.</p>
-  </footer>
+</footer>
 
 </body>
 </html>
